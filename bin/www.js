@@ -1,6 +1,6 @@
 #!/usr/bin/env babel-node
 
-import * as http from 'http';
+import http from 'http';
 import app from '../app';
 
 const port = '3000';
