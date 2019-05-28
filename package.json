@@ -1,0 +1,22 @@
+{
+  "name": "hivenotes-backend",
+  "version": "1.0.0",
+  "description": "Backend service supporting Angular frontend.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zentren/HiveNotes-Backend.git"
+  },
+  "author": "Rowan Reeve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zentren/HiveNotes-Backend/issues"
+  },
+  "homepage": "https://github.com/Zentren/HiveNotes-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
