@@ -32,7 +32,8 @@ router.get('/course/:courseId/modules/', async (req, res) => {
   const sections = await selectCourseSections(req.params.courseId);
   let result = sections.map(section => ({
     moduleId: section.SectionId,
-    name: section.Name
+    name: section.Name,
+    pathToMarkdown: section.PathToMarkdown
   }));
   res.json(result);
 });
@@ -41,7 +42,8 @@ router.get('/module/:moduleId', async (req, res) => {
   const section = (await selectSection(req.params.moduleId))[0];
   let result = {
     moduleId: section.SectionId,
-    name: section.Name
+    name: section.Name,
+    pathToMarkdown: section.PathToMarkdown
   };
   res.json(result);
 });
