@@ -1,4 +1,7 @@
 import express from 'express';
+import request from 'request';
+
+import hiveConfig from '../config/hive-config';
 import { selectAllCourses, selectCourseSections, selectCourse, selectSection } from '../helpers/hive-db';
 
 
@@ -46,6 +49,11 @@ router.get('/module/:moduleId', async (req, res) => {
     pathToMarkdown: section.PathToMarkdown
   };
   res.json(result);
+});
+
+router.get('/markdown/*', async (req, res) => {
+  const url = `${hiveConfig.url}${hiveConfig.markdown}${req.params[0]}`;
+  req.pipe(request(url)).pipe(res);
 });
 
 export default router;
