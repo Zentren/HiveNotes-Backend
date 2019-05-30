@@ -1,5 +1,5 @@
 import express from 'express';
-import { selectAllCourses, selectCourseSections, selectCourse } from '../helpers/hive-db';
+import { selectAllCourses, selectCourseSections, selectCourse, selectSection } from '../helpers/hive-db';
 
 
 const router = express.Router();
@@ -38,7 +38,7 @@ router.get('/course/:courseId/modules/', async (req, res) => {
 });
 
 router.get('/module/:moduleId', async (req, res) => {
-  const section = await selectSection(req.params.moduleId);
+  const section = (await selectSection(req.params.moduleId))[0];
   let result = {
     moduleId: section.SectionId,
     name: section.Name
