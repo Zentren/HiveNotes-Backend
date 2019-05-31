@@ -2,7 +2,7 @@ import express from 'express';
 import request from 'request';
 
 import hiveConfig from '../config/hive-config';
-import { selectAllCourses, selectCourseSections, selectCourse, selectSection } from '../helpers/hive-db';
+import { selectAllCourses, selectCourseSections, selectCourse, selectSection } from '../services/hive-db/crud';
 
 
 const router = express.Router();
